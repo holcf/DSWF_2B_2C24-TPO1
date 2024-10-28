@@ -1,0 +1,1084 @@
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Variables
+- - - - - - - - - - - - - - - - - - -
+*/
+:root {
+  font-size: 1rem;
+
+  @media screen and (width <=480px) {
+    font-size: 0.9rem;
+  }
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Ajustes generales
+- - - - - - - - - - - - - - - - - - -
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-optical-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: whitesmoke;
+  color: black;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  overflow-x: hidden;
+  min-width: 300px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+section {
+  width: 100%
+}
+
+h2 {
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Navbar
+- - - - - - - - - - - - - - - - - - -
+*/
+.navbar {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: whitesmoke;
+  background-color: rgb(50, 66, 0);
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+
+  @media screen and (width <=1080px) {
+    display: none;
+  }
+
+}
+
+.navbar .logo {
+  position: fixed;
+  width: fit-content;
+}
+
+.logo {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 25%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  left: 2rem;
+
+  img {
+    height: 30px;
+  }
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Sección Hero
+- - - - - - - - - - - - - - - - - - -
+*/
+section.hero {
+  background: url("../img/te01.webp");
+  background-size: cover;
+  min-height: 200px;
+  color: whitesmoke
+}
+
+section.hero .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 10rem 12rem;
+  font-family: "Oswald", sans-serif;
+
+  @media screen and (width <=1080px) {
+    padding: 8rem 6rem;
+  }
+
+  @media screen and (width <=768px) {
+    padding: 8rem 4rem;
+  }
+
+  @media screen and (width <=480px) {
+    padding: 6rem 3rem;
+  }
+
+  @media screen and (width <=375px) {
+    padding: 6rem 3rem;
+  }
+
+  :nth-child(1) {
+    font-weight: 200;
+    font-size: 3rem;
+  }
+
+  :nth-child(2) {
+    font-size: 4.5rem;
+    font-weight: 600;
+  }
+
+  :nth-child(3),
+  :nth-child(4) {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+  }
+
+  button {
+    font-family: "Lato", sans-serif;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: whitesmoke;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  button:hover {
+    border: 2px solid white;
+    transition: all 0.3s;
+  }
+
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Ajustes secciones varias
+- - - - - - - - - - - - - - - - - - -
+*/
+section.nuestros-productos,
+section.banners,
+section.elegir .content-container {
+  max-width: 1600px;
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Sección Nuestros productos
+- - - - - - - - - - - - - - - - - - -
+*/
+.nuestros-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  padding-top: 6rem;
+  align-items: center;
+
+  .tira-imagenes {
+    overflow: auto;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 100%;
+    justify-content: space-between;
+
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .tira-img {
+      background: url("../img/tb.jpg");
+      aspect-ratio: 1/1;
+      background-size: 100%;
+      transition: all 0.5s ease;
+      background-position: center;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+    }
+
+    .tira-img:hover {
+      background: url("../img/tb2.jpg");
+      transition: background 1s ease;
+      background-size: 110%;
+      background-position: center;
+    }
+
+    img {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Sección Banners
+- - - - - - - - - - - - - - - - - - -
+*/
+section.banners {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem
+  }
+
+  :nth-child(1).banner-container {
+    background: url("../img/te03.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: background-size 0.5s;
+  }
+
+  :nth-child(2).banner-container {
+    background: url("../img/te04.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.5s;
+  }
+}
+
+section.banners .banner-container:hover {
+  background-size: 110%;
+}
+
+section.banners .banner-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+  padding: 3rem;
+  font-family: "Oswald", sans-serif;
+  cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  :nth-child(1) {
+    font-family: "Lato", sans-serif;
+    font-size: 0.9rem;
+    background-color: whitesmoke;
+    padding: 0.2rem 0.4rem;
+  }
+
+  :nth-child(2) {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    @media screen and (max-width: 480px) {
+      font-size: 2rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+    }
+  }
+
+  button {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    background-color: black;
+    border: none;
+    color: whitesmoke;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Sección elegir
+- - - - - - - - - - - - - - - - - - -
+*/
+section.elegir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  background-color: rgb(237, 237, 237);
+
+  header {
+    text-align: center;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    :nth-child(1) {
+      font-family: "Lato", sans-serif;
+      color: #7f975d;
+    }
+
+    h2 {
+      padding: 1rem;
+    }
+  }
+
+
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem;
+    width: 100%;
+
+
+
+    .column1,
+    .column3 {
+      width: 20%;
+    }
+
+    .column2 {
+      width: 45%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .column1 {
+      text-align: end;
+    }
+
+    .text-container {
+      h3 {
+        font-family: 1rem;
+        font-weight: 600;
+        color: rgb(0, 79, 0);
+      }
+
+      p {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        font-family: "Lato", sans-serif;
+        color: rgb(70, 70, 70);
+        font-weight: 400;
+        line-height: 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (width <=1080px) {
+
+      flex-direction: column;
+      gap: 1rem;
+
+      .column2 {
+        width: 100%;
+        text-align: center;
+      }
+
+      .column1,
+      .column3 {
+        width: 100%;
+        text-align: start;
+      }
+    }
+  }
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Sección Sucursal
+- - - - - - - - - - - - - - - - - - -
+*/
+section.sucursal {
+  background: url("../img/te06.webp");
+  background-size: cover;
+  padding: 16rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+
+  :nth-child(1) {
+    font-size: 3rem;
+    font-weight: 100;
+    color: whitesmoke;
+    line-height: 1rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  :nth-child(2) {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #a7c77a;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+  }
+
+  :nth-child(3) {
+    font-size: 1.1rem;
+    font-family: "Lato", sans-serif;
+
+  }
+
+  button {
+    font-family: "Lato", sans-serif;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: whitesmoke;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+}
+
+.line {
+  background-color: #a7c77a;
+  width: 120px;
+  height: 2px;
+  margin: 1rem;
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Footer
+- - - - - - - - - - - - - - - - - - -
+*/
+footer {
+  color: whitesmoke;
+  background-color: rgb(0, 20, 0);
+
+  .content {
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @media screen and (width <=1080px) {
+      padding-left: 10vw;
+      padding-right: 10vw;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    @media screen and (width <=480px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: auto;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.85rem;
+      font-family: "Lato", sans-serif;
+      color: rgb(221, 221, 221);
+
+      :nth-child(1) {
+        font-family: "Oswald", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #a7c77a;
+      }
+
+    }
+
+    .news {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      :nth-child(1),
+      :nth-child(3) {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #a7c77a;
+      }
+
+      :nth-child(2) {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        align-items: center;
+        font-family: "Lato", sans-serif;
+
+        input {
+          font-family: "Lato", sans-serif;
+          min-width: 300px;
+          padding: 0.6rem 1rem;
+          font-size: 0.9rem;
+          font-weight: 400;
+          background-color: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+
+          @media screen and (width <=480px) {
+            min-width: 0px;
+            max-width: 40vw;
+            height: 2.5rem;
+          }
+
+          @media screen and (width <=375px) {
+            max-width: 30vw;
+          }
+        }
+
+        button {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+          border: none;
+          color: black;
+          background-color: #a7c77a;
+          height: 100%;
+
+          @media screen and (width <=480px) {
+            height: 2.5rem;
+          }
+
+          @media screen and (width <=375px) {
+            height: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(221, 221, 221);
+    padding: 1.5rem 4rem;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    font-family: "Lato", sans-serif;
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.social div {
+  width: fit-content;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.social #icon-insta {
+  height: 16px;
+}
+
+.social #icon-face {
+  height: 18px;
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Menú responsive
+- - - - - - - - - - - - - - - - - - -
+*/
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+  display: none;
+}
+
+.menu-container .logo {
+  z-index: 100;
+  color: whitesmoke;
+}
+
+.menu-icon {
+  background-color: rgb(50, 66, 0);
+  color: whitesmoke;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+
+.menu-container {
+  background-color: rgb(50, 66, 0);
+  padding: 1rem;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-icon span {
+  background-color: whitesmoke;
+  height: 3px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.menu {
+  padding-top: 3rem;
+  border-right: 1px solid gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(50, 66, 0);
+  width: 250px;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.menu ul li {
+  margin: 1rem 0;
+}
+
+.menu ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.menu-toggle:checked+.menu-icon+.menu {
+  transform: translateX(0);
+}
+
+.menu-container:has(>.menu-toggle:checked)+.menu {
+  transform: translateX(0);
+}
+
+.menu,
+.menu-container {
+  display: none;
+}
+
+@media screen and (max-width: 1080px) {
+  .menu {
+    display: flex;
+  }
+
+  .menu-container {
+    display: flex;
+  }
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Página Contacto
+- - - - - - - - - - - - - - - - - - -
+*/
+
+section.contacto {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+
+  @media screen and (width <=768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  >div:nth-child(1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media screen and (width <=768px) {
+      border-right: none;
+    }
+  }
+
+  >div {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 3rem 0rem;
+    width: 50%;
+    padding: 1rem 3rem;
+
+    @media screen and (width <=768px) {
+      width: 100%;
+    }
+
+    h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.5rem;
+      text-align: start;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+    }
+
+    span.line {
+      background-color: rgba(0, 0, 0, 0.1);
+      height: 1px;
+      flex-grow: 1;
+      padding: 0;
+      margin: 0;
+      margin-left: 1rem;
+    }
+
+    form,
+    p {
+      font-family: "Lato", sans-serif;
+      font-size: 0.85rem;
+      color: rgb(90, 90, 90);
+    }
+
+    p {
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input,
+    textarea {
+      padding: 0.5rem;
+      width: 100%;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #87a163;
+      color: whitesmoke;
+      width: fit-content;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      >div img#icon-insta {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      >div img#icon-face {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      >div {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Página Tienda
+- - - - - - - - - - - - - - - - - - -
+*/
+
+section.tienda {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  padding-top: 3rem;
+  align-items: center;
+
+  .tira-imagenes {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 100%;
+    justify-content: center;
+
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .tira-img {
+      background: url("../img/tb.jpg");
+      aspect-ratio: 1/1;
+      background-size: 100%;
+      transition: all 0.5s ease;
+      background-position: center;
+      width: 25vw;
+      height: 25vw;
+      cursor: pointer;
+
+      @media screen and (width <=768px) {
+        width: 40vw;
+        height: 40vw;
+      }
+
+      @media screen and (width <=480px) {
+        width: 70vw;
+        height: 70vw;
+      }
+    }
+
+    .tira-img:hover {
+      background: url("../img/tb2.jpg");
+      transition: background 1s ease;
+      background-size: 110%;
+      background-position: center;
+    }
+
+    /*     img {
+      height: 600px;
+      width: 600px;
+    }
+ */
+  }
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - 
+- Página Tienda
+- - - - - - - - - - - - - - - - - - -
+*/
+
+section.tutoriales {
+  text-align: center;
+  padding: 3rem;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding: 0.5rem;
+    color: rgb(90, 90, 90);
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+section.tutoriales .cuadros {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem
+  }
+
+  :nth-child(1).cuadro-container {
+    background: url("../img/tu1.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: background-size 0.5s;
+  }
+
+  :nth-child(2).cuadro-container {
+    background: url("../img/tu2.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.5s;
+  }
+
+  :nth-child(3).cuadro-container {
+    background: url("../img/tu3.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.5s;
+  }
+
+  :nth-child(4).cuadro-container {
+    background: url("../img/tu4.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.5s;
+  }
+
+  :nth-child(5).cuadro-container {
+    background: url("../img/tu5.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.5s;
+  }
+
+  :nth-child(6).cuadro-container {
+    background: url("../img/tu6.webp");
+    aspect-ratio: 16/9;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.5s;
+  }
+
+
+  .cuadro-container:hover {
+    background-size: 110%;
+  }
+
+  .cuadro-container {
+    /*     width: 50%;
+ */
+    width: 40vw;
+    height: 26vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    font-family: "Oswald", sans-serif;
+    cursor: pointer;
+
+    @media screen and (max-width: 480px) {
+      padding: 1rem;
+      width: 100%;
+    }
+
+    :nth-child(1) {
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: "Oswald", sans-serif;
+      color: whitesmoke;
+      padding: 0.2rem 0.4rem;
+    }
+
+    :nth-child(2) {
+      font-family: "Lato", sans-serif;
+      font-size: 0.8rem;
+      border-bottom: 2px solid #a7c77a;
+      font-weight: 600;
+      color: whitesmoke;
+      padding-top: 0.5rem;
+      padding-bottom: 0.2rem;
+
+
+    }
+
+    :nth-child(2):hover {
+      border-bottom: 2px solid rgba(167, 199, 122, 0.8);
+      color: rgba(245, 245, 245, 0.8);
+    }
+
+  }
+}
